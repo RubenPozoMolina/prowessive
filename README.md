@@ -20,6 +20,26 @@ flask run
 ## Build and run docker image
 ```bash
 docker build . -t prowessive:development
-docker run -p 8080:8080 prowessive:development
+docker run -d -p 8000:8000 prowessive:development
 ```
+Now you can access to the main page: 
+[http://localhost:8000] (http://localhost:8000)
+
+## Testing
+To execute tests is mandatory to install chrome and chrome driver:
+```bash
+sudo ./scripts/install-chrome.sh
+sudo ./scripts/install-chromedriver.sh
+```
+Prepare environment:
+```bash
+docker-compose up
+```
+
+Execute tests:
+```bash
+pytest -s
+```
+
+
 

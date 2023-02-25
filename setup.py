@@ -18,7 +18,8 @@ setup(
     install_requires=['Flask', 'gunicorn'],
     extras_require={
         'dev': [
-            'pytest'
+            'pytest',
+            'selenium'
         ]
     },
     long_description=read('README.md'),
