@@ -1,0 +1,89 @@
+
+
+* {
+  margin: 0px;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 120%;
+}
+
+#pageStyle {
+  background-color: green;
+  min-height: 90%;
+  padding: 1%;
+  margin-bottom: 5px;
+  float: top;
+}
+
+/* Header */
+#headerPanel {
+  background-color: blue;
+  width: 98%;
+  height: 20%;
+  padding: 1%;
+}
+
+#logoPanel {
+  background-color: silver;
+  width: 20%;
+  height: 100%;
+  float: left;
+}
+
+#titlePanel {
+  background-color: SkyBlue;
+  width: 60%;
+  height: 100%;
+  float: left;
+  text-align: center;
+}
+
+#searchPanel {
+  background-color: silver;
+  width: 20%;
+  height: 100%;
+  float: left;
+}
+
+/* Body */
+
+#leftPanel {
+  background-color: RoyalBlue;
+  width: 15%;
+  float: left;
+  height: 71%;
+}
+
+#centerPanel {
+  background-color: white;
+  width: 70%;
+  float: left;
+}
+
+#centerPanel h1 {
+  text-align: center;
+}
+
+#rightPanel {
+  background-color: RoyalBlue;
+  width: 15%;
+  float: left;
+  height: 71%;
+}
+
+/*  Footer */
+#cleanFooter {
+  clear: both;
+}
+
+#footerPanel {
+  background-color: DarkBlue;
+  text-align: center;
+  color: white;
+  height: 5%;
+  width: 100%;
+}
