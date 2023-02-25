@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+  </head>
+  <body>
+    <div id="root">
+      <div id="app">
+        <div id="headerPanel">
+          <div id="logoPanel">
+          </div>
+          <div id="titlePanel">
+          </div>
+          <div id="searchPanel">
+          </div>
+        </div>
+        <div id="leftPanel">
+        </div>
+        <div id="centerPanel">
+        {% block content %} {% endblock %}
+        </div>
+        <div id="rightPanel">
+        </div>
+        <div id="cleanFooter"></div>
+        <div id="footerPanel"></div>
+      </div>
+    </div>
+  </body>
+</html>
