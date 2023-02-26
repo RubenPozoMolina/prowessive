@@ -19,7 +19,10 @@ setup(
     extras_require={
         'dev': [
             'pytest',
-            'selenium'
+            'selenium',
+            'pyyaml',
+            'waiting',
+            'requests'
         ]
     },
     long_description=read('README.md'),

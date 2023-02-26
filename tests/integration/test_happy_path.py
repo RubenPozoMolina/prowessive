@@ -4,9 +4,9 @@ from tests.helpers.selenium_utils import SeleniumUtils
 
 
 @pytest.fixture(scope="session", autouse=True)
-def selenium():
-    selenium_utils = SeleniumUtils()
-    url = 'http://localhost:8000'
+def selenium(config):
+    selenium_utils = SeleniumUtils(config['selenium']['headless'])
+    url = config['host']
     selenium_utils.driver.get(url)
     yield selenium_utils
 
