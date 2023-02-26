@@ -16,7 +16,7 @@ jobs:
           command: source venv/bin/activate
       - run:
           name: Install requirements
-          command: pip install --editable ".[dev]"
+          command: pip3 install --editable ".[dev]"
       - run:
           name: Run flask
           command: cd prowessive && flask run &
