@@ -19,7 +19,7 @@ jobs:
           command: pip3 install --editable ".[dev]"
       - run:
           name: Run flask
-          command: cd prowessive && flask run  --port=8000
+          command: cd prowessive && flask run --port=8000 &
       - run:
           name: test
           command: pytest -s
