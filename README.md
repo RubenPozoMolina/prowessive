@@ -11,7 +11,7 @@ pip install --editable ".[dev]"
 
 ## Execute from command line for development purposes:
 ```bash
-export FLASK_APP=prowessive
+export FLASK_APP=app
 export FLASK_DEBUG=0
 cd prowessive
 flask run 
