@@ -16,8 +16,8 @@ class SeleniumUtils:
 
     def __init__(self, headless=True):
         print('Init selenium utils.', flush=True)
-        self.setup_driver()
         self.headless = headless
+        self.setup_driver()
 
     def __del__(self):
         if self.driver is not None:
@@ -26,8 +26,6 @@ class SeleniumUtils:
 
     def setup_driver(self):
         options = webdriver.ChromeOptions()
-        if self.headless:
-            options.add_argument("--headless")
         options.add_argument("--incognito")
         options.add_argument("--start-maximized")  # open Browser in maximized mode
         options.add_argument("--disable-infobars")  # disabling infobars
@@ -50,6 +48,8 @@ class SeleniumUtils:
         }
         options.add_experimental_option("prefs", prefs)
         options.set_capability("goog:loggingPrefs", {'performance': 'ALL'})
+        if self.headless:
+            options.add_argument("--headless")
         self.driver = webdriver.Chrome(options=options)
         self.wait = WebDriverWait(self.driver, int(TIMEOUT))
 

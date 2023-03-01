@@ -1,0 +1,36 @@
+version: 2.1
+jobs:
+  test:
+    docker:
+      - image: rpozo/python-selenium-testing
+    environment:
+      FLASK_APP: app
+      FLASK_DEBUG: 0
+    steps:
+      - checkout
+      - run:
+          name: Create virtual environment
+          command: python3 -m venv venv
+      - run:
+          name: Activate virtual environment
+          command: source venv/bin/activate
+      - run:
+          name: Install requirements
+          command: pip3 install --editable ".[dev]"
+      - run:
+          name: Run flask
+          command: cd prowessive && flask run --port=8000
+          background: true
+      - run:
+          name: test
+          command: pytest -s
+workflows:
+  version: 2
+  test-workflow:
+    jobs:
+      - test
+
+
+
+
+
