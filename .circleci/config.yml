@@ -4,8 +4,8 @@ jobs:
     docker:
       - image: rpozo/python-selenium-testing
     environment:
-      FLASK_APP=prowessive
-      FLASK_DEBUG=0
+      FLASK_APP: prowessive
+      FLASK_DEBUG: 0
     steps:
       - checkout
       - run:
