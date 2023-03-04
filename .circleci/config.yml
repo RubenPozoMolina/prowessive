@@ -7,8 +7,6 @@ jobs:
         environment:
           - POSTGRES_USER=postgres
           - POSTGRES_PASSWORD=postgres
-        ports:
-          - '5432:5432'
       - image: rpozo/python-selenium-testing
     environment:
       FLASK_APP: app
