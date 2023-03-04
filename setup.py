@@ -15,7 +15,7 @@ setup(
     license="MIT",
     keywords="RAD pwa",
     url="https://github.com/RubenPozoMolina/prowessive",
-    install_requires=['Flask', 'gunicorn'],
+    install_requires=['Flask', 'gunicorn', 'psycopg2'],
     extras_require={
         'dev': [
             'pytest',
