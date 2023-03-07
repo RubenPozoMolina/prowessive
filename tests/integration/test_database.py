@@ -14,7 +14,10 @@ DROP TABLE test_files;
 @pytest.fixture(scope="session", autouse=True)
 def database(configuration):
     local_database = Database()
-    local_database.execute(drop_table)
+    try:
+        local_database.execute(drop_table)
+    except Exception as e:
+        print("test table doesn't exist:", str(e))
     local_database.execute(create_table)
     yield local_database
 
