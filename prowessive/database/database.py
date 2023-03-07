@@ -57,6 +57,7 @@ class Database:
 
     def execute(self, sql, variables=None):
         self.default_cursor.execute(sql, variables)
+        self.connection.commit()
 
     def insert_file(self, uri_path, path_to_file):
         try:
