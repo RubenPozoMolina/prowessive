@@ -1,5 +1,5 @@
 FROM debian:10.13-slim
-RUN apt-get update && apt-get install -y python3 python3-pip
+RUN apt-get update && apt-get install -y python3 python3-pip libpq-dev
 
 # Prepare app
 COPY ./setup.py /prowessive/setup.py
