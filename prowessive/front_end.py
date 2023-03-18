@@ -19,10 +19,14 @@ class FrontEnd:
         files = self.database.query(query_files)
         for file in files:
             path = file[0]
+            file_content = bytes(file[1])
             func_name = path.replace('.', '_').replace('/', '_')
             arguments = ''
             code = f"""
-            return '{path}'
+            from flask import make_response
+            response = make_response({file_content})
+            # response.headers.set('Content-Type', 'text/html')
+            return response
             """
             func = create_function(func_name, arguments, code)
             self.flask_application.add_url_rule(path, func_name, view_func=func)
