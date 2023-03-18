@@ -8,6 +8,10 @@ python3 -m venv venv
 source venv/bin/activate
 pip install --editable ".[dev]"
 ```
+## Run database
+```bash
+source scripts/run-database.sh
+```
 
 ## Execute from command line for development purposes:
 ```bash

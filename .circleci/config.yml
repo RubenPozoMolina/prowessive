@@ -3,6 +3,10 @@ jobs:
   test:
     docker:
       - image: rpozo/python-selenium-testing
+      - image: postgres:14.1-alpine
+        environment:
+          - POSTGRES_USER=postgres
+          - POSTGRES_PASSWORD=postgres
     environment:
       FLASK_APP: app
       FLASK_DEBUG: 0
