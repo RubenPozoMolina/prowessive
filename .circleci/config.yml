@@ -16,7 +16,7 @@ jobs:
       - run:
           name: Wait for db
           command: |
-            while ! curl http://localhost:5432/ 2>&1 | grep '52'
+            while ! pg_isready -d postgres -h localhost -p 5432 -U postgres 2>&1 | grep 'no response'
             do
               sleep 1
             done
