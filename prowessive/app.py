@@ -25,4 +25,4 @@ except Exception as e:
     app.add_url_rule('/', 'under_maintenance', view_func=under_maintenance)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=port)
