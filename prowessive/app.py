@@ -1,29 +1,28 @@
 import os
-from flask import Flask, render_template, redirect, send_from_directory
-from prowessive.database.database import Database
-from prowessive.front_end import FrontEnd
+from flask import Flask, redirect, send_from_directory
+from database.database import Database
+from front_end import FrontEnd
 
 port = int(os.getenv('PROWESSIVE_PORT', '8000'))
-database = Database()
 app = Flask(__name__)
 
-front_end = FrontEnd(app, database)
-front_end.load_urls_from_database()
 
-
-@app.route('/')
 def index():
     return redirect("index.html", code=302)
 
 
-@app.route('/favicon.ico')
-def favicon():
-    return send_from_directory(
-        'static',
-        'favicon.ico',
-        mimetype='image/vnd.microsoft.icon'
-    )
+def under_maintenance():
+    return "Under maintenance"
 
+
+try:
+    database = Database()
+    front_end = FrontEnd(app, database)
+    front_end.load_urls_from_database()
+    app.add_url_rule('/', 'index', view_func=index)
+except Exception as e:
+    print('Error loading frontend from database:', str(e))
+    app.add_url_rule('/', 'under_maintenance', view_func=under_maintenance)
 
 if __name__ == '__main__':
     app.run()

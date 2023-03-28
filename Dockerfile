@@ -22,6 +22,6 @@ ENV DB_USER=postgres
 ENV DB_PASSWORD=postgres
 
 EXPOSE 8000
-ENTRYPOINT ["/bin/bash"]
-CMD ["entrypoint.sh"]
+ENTRYPOINT ["/prowessive/entrypoint.sh"]
+
 

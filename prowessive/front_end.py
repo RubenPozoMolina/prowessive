@@ -1,6 +1,4 @@
-import base64
-
-from prowessive.code.function_utils import create_function
+from code.function_utils import create_function
 
 query_files = """
 SELECT path, file_bytes FROM files
