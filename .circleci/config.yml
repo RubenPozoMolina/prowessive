@@ -15,7 +15,11 @@ jobs:
       - checkout
       - run:
           name: Wait for db
-          command: dockerize -wait tcp://localhost:5432 -timeout 1m
+          command: |
+            while ! curl http://localhost:5432/ 2>&1 | grep '52'
+            do
+              sleep 1
+            done
       - run:
           name: Create virtual environment
           command: python3 -m venv venv
