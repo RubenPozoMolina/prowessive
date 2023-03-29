@@ -1,5 +1,7 @@
 import os
-from flask import Flask, redirect, send_from_directory
+
+from flask import Flask, redirect
+
 from database.database import Database
 from front_end import FrontEnd
 
