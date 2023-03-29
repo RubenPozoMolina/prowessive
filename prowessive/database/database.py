@@ -76,6 +76,7 @@ class Database:
 
     def create_table_files(self):
         query_result = self.query(query_table_exists, ('files',))
+        print("Table file exists:", query_result[FIRST_ITEM][FIRST_ITEM])
         table_files_exists = query_result[FIRST_ITEM][FIRST_ITEM]
         if not table_files_exists:
             self.execute(create_files_table)
