@@ -80,7 +80,7 @@ class Database:
         table_files_exists = query_result[FIRST_ITEM][FIRST_ITEM]
         if not table_files_exists:
             self.execute(create_files_table)
-            self.load_files_from_path('www')
+            self.load_files_from_path('prowessive/www')
 
     def load_files_from_path(self, path):
         try:

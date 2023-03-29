@@ -4,8 +4,8 @@ RUN apt-get update && apt-get install -y python3 python3-pip libpq-dev
 # Prepare app
 COPY ./setup.py /prowessive/setup.py
 COPY ./README.md /prowessive/README.md
-WORKDIR /prowessive
-RUN python3 -m pip install .
+WORKDIR /
+RUN python3 -m pip install /prowessive
 COPY prowessive /prowessive
 COPY entrypoint.sh /prowessive/entrypoint.sh
 
@@ -13,7 +13,7 @@ COPY entrypoint.sh /prowessive/entrypoint.sh
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Environment variables
-ENV FLASK_APP=app.py
+ENV FLASK_APP=/prowessive/app.py
 ENV FLASK_DEBUG=0
 ENV DB_HOST=postgres
 ENV DB_PORT=5432
